@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "doc-generator"
+version = "1.0.0"
+description = "A tool to generate Word documents from Excel data using templates"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Author"}
+]
+keywords = ["excel", "word", "template", "document", "generator"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business",
+]
+
+dependencies = [
+    "PyQt6>=6.4.0",
+    "openpyxl>=3.1.0",
+    "python-docx>=1.1.0",
+    "simpleeval>=0.9.13",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pyinstaller>=6.0.0",
+]
+
+[project.scripts]
+doc-generator = "doc_generator.main:main"
+
+[project.gui-scripts]
+doc-generator-gui = "doc_generator.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"

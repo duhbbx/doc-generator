@@ -1,0 +1,9 @@
+# Core dependencies
+PyQt6>=6.4.0
+openpyxl>=3.1.0
+python-docx>=1.1.0
+simpleeval>=0.9.13
+
+# Development dependencies
+pytest>=7.0.0
+pyinstaller>=6.0.0
